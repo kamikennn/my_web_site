@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}CONTACT ME{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h2>Hi {{ user.username }}! Thank you for signup!</h2>
+{% else %}
+    <p>You are not signup. Please signup and contact me.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Log In</a>
+    </p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
+    </p>
+{% endif %}
+{% endblock content %}

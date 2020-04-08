@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  {% for inquiry in object_list %}
+    <div class="card">
+      <div class="card-header">
+        <span class="font-weight-bold">{{ inquiry.title }}</span> &middot;
+        <span class="text-muted">by {{ inquiry.author }} | {{ inquiry.date }}</span>
+      </div>
+      <div class="card-body">
+        <p>{{ inquiry.body }}</p>
+        <a href="{% url 'inquiry_edit' inquiry.pk %}">Edit</a> |
+        <a href="{% url 'inquiry_delete' inquiry.pk %}">Delete</a>
+      </div>
+      <div class="card-footer">
+        {% for comment in inquiry.comments.all %}
+          <p>
+            <span class="font-weight-bold">{{ comment.author }}&middot;</span>
+            {{ comment }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+    <br />
+  {% endfor %}
+{% else %}
+  <p>Please Log In or Sign Up</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Log In</a>OR
+    <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
+  </p>
+{% endif %}
+{% endblock content %}

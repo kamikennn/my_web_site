@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% bootstrap_css %}
+
+
+<!-- override head title in base.html -->
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br><br><br><br><br>
+    <div class="jumbotron jumbotron-fluid text-light bg-dark">
+        <h1 class="text-center display-1">KENTARO KAMIYA</h1>
+        <p class="text-center h1">SOFTWARE ENGINEER</p>
+        <p class="lead">
+            <div class="container text-center">
+                <div class="row">
+                  <div class="col-sm">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">About Me</a>
+                  </div>
+                  <div class="col-sm">
+                    <a class="btn btn-success btn-lg" href="#" role="button">Portfolio</a>
+                  </div>
+                  <div class="col-sm">
+                    <a class="btn btn-danger btn-lg" href="#" role="button">Strength</a>
+                  </div>
+                  <div class="col-sm">
+                    <a class="btn btn-warning btn-lg" href="{% url 'inquiry_list' %}" role="button">Contact</a>
+                  </div>
+                </div>
+            </div>
+        </p>
+    </div>
+{% endblock content %}
+

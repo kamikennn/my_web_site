@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inquiry Detail{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="inquiry-entry">
+        <h2>{{ object.title }}</h2>
+        <p>by {{ object.author }} | {{ object.date }}</p>
+        <p>{{ object.body }}</p>
+    </div>
+
+    <p class="lead"><a class="btn btn-primary btn-lg" href="{% url 'inquiry_edit' inquiry.pk %}">Edit</a>  <a class="btn btn-primary btn-lg" href="{% url 'inquiry_delete' inquiry.pk %}">Delete</a></p>
+    <p>Back to <br><a class="btn btn-primary btn-lg" href="{% url 'inquiry_list' %}">All Inquiries</a>.</p>
+{% else %}
+    <p>You are not signup. Please signup and contact me.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Log In</a>
+    </p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
+    </p>
+{% endif %}
+{% endblock content %}

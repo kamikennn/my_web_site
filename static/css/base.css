@@ -1,0 +1,6 @@
+body {background-image: url("IMG_0822.jpg"); 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;                              /* 画像のサイズを指定    */
+}
