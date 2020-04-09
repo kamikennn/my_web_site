@@ -7,31 +7,31 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<br>
-<br>
-<br>
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+
     <div class="jumbotron jumbotron-fluid text-light bg-dark">
-        <h1 class="text-center display-1">KENTARO KAMIYA</h1>
-        <p class="text-center h1">SOFTWARE ENGINEER</p>
+        <div class="container-fluid text-center">
+          <p class="text-center display-3">KENTARO KAMIYA</p>
+          <h1 class="text-center h1 text-muted">SOFTWARE ENGINEER</h1>
+        </div>
+        <br>
         <p class="lead">
-            <div class="container text-center">
+            <div class="container-fluid text-center">
                 <div class="row">
-                  <div class="col-sm">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">About Me</a>
+                  <div class="col-xs-12 col-sm-6 col-lg-3">
+                    <a class="btn btn-primary btn-lg text-white font-weight-bold" href="#" role="button" style="width:180px">About Me</a>
                   </div>
-                  <div class="col-sm">
-                    <a class="btn btn-success btn-lg" href="#" role="button">Portfolio</a>
+                  <div class="col-xs-12 col-sm-6 col-lg-3">
+                    <a class="btn btn-success btn-lg text-white font-weight-bold" href="#" role="button" style="width:180px">Strength</a>
                   </div>
-                  <div class="col-sm">
-                    <a class="btn btn-danger btn-lg" href="#" role="button">Strength</a>
+                  <div class="col-xs-12 col-sm-6 col-lg-3">
+                    <a class="btn btn-danger btn-lg text-white font-weight-bold" href="#" role="button" style="width:180px">Portfolio</a>
                   </div>
-                  <div class="col-sm">
-                    <a class="btn btn-warning btn-lg" href="{% url 'inquiry_list' %}" role="button">Contact</a>
+                  <div class="col-xs-12 col-sm-6 col-lg-3">
+                    <a class="btn btn-warning btn-lg text-white font-weight-bold" href="#" role="button" style="width:180px">Contact</a>
                   </div>
                 </div>
             </div>
         </p>
     </div>
 {% endblock content %}
-
