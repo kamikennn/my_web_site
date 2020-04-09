@@ -1,22 +1,24 @@
-{% extends 'base.html' %}
+{% extends 'inquirybase.html' %}
 
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-    <h2>Log In</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-success ml-2" type="submit">Log In</button> 
-    </form>
-    <br>
-    <h5>If you forgot your password, you can change.</h5>
-    <p class="lead">
-        <a class="btn btn-success ml-2" href="{% url 'password_reset' %}" role="button">Forgot Password</a>
-    </p>
-    <br>
-    <h5>If you don't have registration, you can signup.</h5>
-    <p class="lead">
-        <a class="btn btn-success ml-2" href="{% url 'signup' %}" role="button">Sign Up</a>
-    </p>
+    <div class="inquiryloginform">
+        <h1 class="text-dark font-weight-bold">Log In</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-outline-dark ml-2 btn-lg font-weight-bold" type="submit">Log In</button> 
+        </form>
+        <br>
+        <h5>If you forgot your password, you can change.</h5>
+        <p class="lead">
+            <a class="btn btn-outline-dark ml-2 btn-lg font-weight-bold" href="{% url 'password_reset' %}" role="button">Forgot Password</a>
+        </p>
+        <br>
+        <h5>If you are not a registrant, you can signup.</h5>
+        <p class="lead">
+            <a class="btn btn-outline-dark btn-lg ml-2 font-weight-bold" href="{% url 'signup' %}" role="button">Sign Up</a>
+        </p>
+    </div>
 {% endblock content %}

@@ -1,58 +1,61 @@
-{% extends 'base.html' %}
-
-{% block title %}Contact{% endblock title %}
-
-{% block nav %}
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                MENU
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                <a class="dropdown-item" href="{% url 'login'%}">Log In</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'logout' %}">
-                Log Out</a>
-              </div>
-            </li>
-          </ul>
-      </div>
-{% endblock nav %}
+{% extends 'inquirybase.html' %}
+{% load static %}
+{% bootstrap_css %}
 
 {% block content %}
-{% if user.is_authenticated %}
-  {% for inquiry in object_list %}
-    <div class="card">
-      <div class="card-header">
-        <span class="font-weight-bold">{{ inquiry.title }}</span> &middot;
-        <span class="text-muted">by {{ inquiry.author }} | {{ inquiry.date }}</span>
-      </div>
-      <div class="card-body">
-        <p>{{ inquiry.body }}</p>
-        <a href="{% url 'inquiry_edit' inquiry.pk %}">Edit</a> |
-        <a href="{% url 'inquiry_delete' inquiry.pk %}">Delete</a>
-      </div>
-      <div class="card-footer">
-        {% for comment in inquiry.comments.all %}
-          <p>
-            <span class="font-weight-bold">{{ comment.author }}&middot;</span>
-            {{ comment }}
-          </p>
+      {% if user.is_authenticated %}
+      <div class="inquiry">
+        <h1 class="h1 font-whight-bold text-dark text-center">INQUIRIES</h1>
+        <dif class="createnew">
+          <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'inquiry_new' %}" role="button">+NEW</a>
+        </dif>
+        {% for inquiry in object_list %}
+          <div class="card">
+            <div class="card-header">
+              <span class="font-weight-bold">{{ inquiry.title }}</span> &middot;
+              <span class="text-muted">by {{ inquiry.author }} | {{ inquiry.date }}</span>
+            </div>
+            <div class="card-body">
+              <p>{{ inquiry.body }}</p>
+              <a href="{% url 'inquiry_edit' inquiry.pk %}">Edit</a> |
+              <a href="{% url 'inquiry_delete' inquiry.pk %}">Delete</a>
+            </div>
+            <div class="card-footer">
+              {% for comment in inquiry.comments.all %}
+                <p>
+                  <span class="font-weight-bold">{{ comment.author }}&middot;</span>
+                  {{ comment }}
+                </p>
+              {% endfor %}
+            </div>
+          </div>
+          <br />
         {% endfor %}
+        </div>
+        <dif class="backhomelogin">
+          <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'home' %}" role="button">BACK HOME</a>
+        </dif>
+        <dif class="logoutinquiry">
+          <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'logout' %}" role="button">Log Out</a>
+        </dif>
+      {% else %}
+      <div class="inquirylistsignuplogin">
+        <h1 class="text-dark font-weight-bold">Please Log In or Sign Up</h1>
+        <div class="inquirylistlogin">
+          <a class="btn btn-outline-dark font-weight-bold btn-lg" href="{% url 'login' %}" role="button">Log In</a>
+        </div>
+        <div class="inquirylistsignup">
+          <a class="btn btn-outline-dark font-weight-bold btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
+        </div>
+        <div class="inquiryor">
+          <h3 class="text-dark">OR</h3>
+        </div>
       </div>
-    </div>
-    <br />
-  {% endfor %}
-{% else %}
-  <p>Please Log In or Sign Up</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Log In</a>OR
-    <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
-  </p>
-{% endif %}
+      {% endif %}
+
+
+
 {% endblock content %}
+
+
+

@@ -1,9 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'inquirybase.html' %}
+{% load static %}
+{% bootstrap_css %}
 
 {% block content %}
-    <h1>New Article</h1>
-    <form action="" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-success ml-2" type="submit">Save</button>
-    </form>
+    <div class="newinquiry">
+        <h1 class="text-dark font-weight-bold">Content</h1>
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-outline-dark ml-2 btn-lg font-weight-bold" type="submit">Save</button>
+        </form>
+    </div>
+    <dif class="backtoinquirylist">
+        <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'inquiry_list' %}" role="button">Back</a>
+    </dif>
 {% endblock content %}
