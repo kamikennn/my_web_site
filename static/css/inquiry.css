@@ -131,3 +131,21 @@ body {
   top: 200px;
   left: 300px;
 }
+
+.inquirydetail {
+  position: relative;
+  top: 200px;
+  left: 400px;
+}
+
+.inquiryedit {
+  position: relative;
+  top: 200px;
+  left: 400px;
+}
+
+.inquirydelete {
+  position: relative;
+  top: 200px;
+  left: 400px;
+}

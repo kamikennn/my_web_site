@@ -1,39 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'inquirybase.html' %}
 {% load static %}
+{% bootstrap_css %}
 {% block title %}Inquiry Detail{% endblock title %}
-{% block nav %}
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                MENU
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                <a class="dropdown-item" href="{% url 'login'%}">Log In</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'logout' %}">
-                Log Out</a>
-              </div>
-            </li>
-          </ul>
-      </div>
-{% endblock nav %}
 
 {% block content %}
 {% if user.is_authenticated %}
-
+  <div class="inquirydetail">
     <div class="inquiry-entry">
-        <h2>{{ object.title }}</h2>
-        <p>by {{ object.author }} | {{ object.date }}</p>
-        <p>{{ object.body }}</p>
+      <h2>{{ object.title }}</h2>
+      <p>by {{ object.author }} | {{ object.date }}</p>
+      <p>{{ object.body }}</p>
     </div>
 
-    <p class="lead"><a class="btn btn-primary btn-lg" href="{% url 'inquiry_edit' inquiry.pk %}">Edit</a>  <a class="btn btn-primary btn-lg" href="{% url 'inquiry_delete' inquiry.pk %}">Delete</a></p>
-    <p>Back to <br><a class="btn btn-primary btn-lg" href="{% url 'inquiry_list' %}">All Inquiries</a>.</p>
+    <p class="lead"><a class="btn btn-outline-dark font-weight-bold btn-lg" href="{% url 'inquiry_edit' inquiry.pk %}">Edit</a>  <a class="btn btn-outline-dark font-weight-bold btn-lg" href="{% url 'inquiry_delete' inquiry.pk %}">Delete</a>
+    <a class="btn btn-outline-dark font-weight-bold btn-lg" href="{% url 'inquiry_list' %}">See all inquiries</a></p>
 {% else %}
     <p>You are not signup. Please signup and contact me.</p>
     <p class="lead">

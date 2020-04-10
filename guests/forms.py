@@ -17,7 +17,7 @@ class CustomUserCreationForm(UserCreationForm):
         #with defaul fields
         # fields = UserCreationForm.Meta.fields + ('age','country',)
         #without default fields
-        fields = ('username','age','country',)
+        fields = ('username','age',)
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
@@ -26,4 +26,4 @@ class CustomUserChangeForm(UserChangeForm):
         #with defaul fields
         # fields = UserChangeForm.Meta.fields
         #without default fields
-        fields = ('username','age','country',)
+        fields = ('username','age',)

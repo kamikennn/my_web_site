@@ -1,9 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'inquirybase.html' %}
 
 {% block content %}
-    <h1>Delete</h1>
+<div class="inquirydelete">
+    <h1 class="font-weight-bold text-dark">DELETE</h1>
     <form action="" method="post">{% csrf_token %}
-        <p>Are you sure you want to delete "{{ article.title }}"?</p>
-        <button class="btn btn-danger ml-2" type="submit">Confirm</button>
+        <p>Are you sure you want to delete "{{ inquiry.title }}"?</p>
+        <button class="btn btn-outline-danger font-weight-bold btn-lg" type="submit">Confirm</button>
     </form>
+</div>
 {% endblock content %}

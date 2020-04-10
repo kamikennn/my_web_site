@@ -9,6 +9,6 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
     #/admin画面で表示させたいfields
-    list_display = ['email','username','age','country','is_staff',]
+    list_display = ['email','username','age','is_staff',]
 
 admin.site.register(CustomUser, CustomUserAdmin)

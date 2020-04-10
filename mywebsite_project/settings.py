@@ -90,7 +90,7 @@ DATABASES = {
     }
 }
 
-# # [START db_setup]
+# [START db_setup]
 # if os.getenv('GAE_APPLICATION', None):
 #     # Running on production App Engine, so connect to Google Cloud SQL using
 #     # the unix socket at /cloudsql/<your-cloudsql-connection string>
@@ -118,7 +118,7 @@ DATABASES = {
 #             'PASSWORD': 'klx25osr',
 #         }
 #     }
-# # [END db_setup]
+# [END db_setup]
 
 
 # Password validation
@@ -158,15 +158,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 #add following for customizing user model. (reference: guests/models.py)
 AUTH_USER_MODEL = 'guests.CustomUser'
 
 #'home' is a url where user is going when user login or logout
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'inquiry_list'
 LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -174,7 +172,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # EMAIL_API_KEY = os.environ['EMAIL_API_KEY']

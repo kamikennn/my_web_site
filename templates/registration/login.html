@@ -5,20 +5,23 @@
 {% block content %}
     <div class="inquiryloginform">
         <h1 class="text-dark font-weight-bold">Log In</h1>
+        <br>
+        <h4 class="text-dark">Userneme: user</h4>
+        <h4 class="text-dark">Password: testuser</h4>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button class="btn btn-outline-dark ml-2 btn-lg font-weight-bold" type="submit">Log In</button> 
         </form>
         <br>
+        <h2 class="text-dark font-weight-bold">You can create own account</h2>
+        <p class="lead">
+            <a class="btn btn-outline-dark btn-lg ml-2 font-weight-bold" href="{% url 'signup' %}" role="button">Sign Up</a>
+        </p>
+        <br>
         <h5>If you forgot your password, you can change.</h5>
         <p class="lead">
             <a class="btn btn-outline-dark ml-2 btn-lg font-weight-bold" href="{% url 'password_reset' %}" role="button">Forgot Password</a>
-        </p>
-        <br>
-        <h5>If you are not a registrant, you can signup.</h5>
-        <p class="lead">
-            <a class="btn btn-outline-dark btn-lg ml-2 font-weight-bold" href="{% url 'signup' %}" role="button">Sign Up</a>
         </p>
     </div>
 {% endblock content %}

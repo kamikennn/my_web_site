@@ -11,4 +11,3 @@ class CustomUser(AbstractUser):
     $ python manage.py migrate
     '''
     age = models.PositiveIntegerField(null=True,blank=True)
-    country = models.CharField(max_length=20,null=True,blank=True)
