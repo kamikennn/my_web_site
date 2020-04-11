@@ -4,11 +4,10 @@
 
 {% block content %}
       {% if user.is_authenticated %}
-      <div class="inquiry">
+        <br><br><br><br>
         <h1 class="h1 font-whight-bold text-dark text-center">INQUIRIES</h1>
-        <dif class="createnew">
-          <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'inquiry_new' %}" role="button">+NEW</a>
-        </dif>
+        <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'inquiry_new' %}" role="button">+NEW</a>
+        <br><br>
         {% for inquiry in object_list %}
           <div class="card">
             <div class="card-header">
@@ -22,7 +21,7 @@
             </div>
             <div class="card-footer">
               {% for comment in inquiry.comments.all %}
-                <p>
+                <p>from
                   <span class="font-weight-bold">{{ comment.author }}&middot;</span>
                   {{ comment }}
                 </p>
@@ -31,26 +30,17 @@
           </div>
           <br />
         {% endfor %}
-        </div>
-        <dif class="backhomelogin">
-          <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'home' %}" role="button">BACK</a>
-        </dif>
-        <dif class="logoutinquiry">
-          <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'logout' %}" role="button">Log Out</a>
-        </dif>
+        <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'home' %}" role="button">BACK</a>
+        <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'logout' %}" role="button">LOG OUT</a><br><br><br><br>
+
       {% else %}
-      <div class="inquirylistsignuplogin">
-        <h1 class="text-dark font-weight-bold">Please Log In or Sign Up</h1>
-        <div class="inquirylistlogin">
-          <a class="btn btn-outline-dark font-weight-bold btn-lg" href="{% url 'login' %}" role="button">Log In</a>
+      <br><br><br><br>
+      <div class="text-center">
+        <h1 class="text-dark font-weight-bold">Please Log In or Sign Up</h1><br>
+        <a class="btn btn-outline-dark font-weight-bold btn-lg" href="{% url 'login' %}" role="button">Log In</a>
+        <a class="h3 text-dark font-weight-bold">&nbsp;&nbsp;&nbsp;OR&nbsp;&nbsp;&nbsp;</a>
+        <a class="btn btn-outline-dark font-weight-bold btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
         </div>
-        <div class="inquirylistsignup">
-          <a class="btn btn-outline-dark font-weight-bold btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
-        </div>
-        <div class="inquiryor">
-          <h3 class="text-dark">OR</h3>
-        </div>
-      </div>
       {% endif %}
 
 

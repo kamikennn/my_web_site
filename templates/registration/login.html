@@ -3,18 +3,17 @@
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-    <div class="inquiryloginform">
-        <h1 class="text-dark font-weight-bold">Log In</h1>
-        <br>
-        <h4 class="text-dark">Userneme: user</h4>
+<br><br><br><br>
+    <div class="text-center">
+        <h1 class="text-dark font-weight-bold">Log In</h1><br>
+        <h4 class="text-dark">Userneme: user&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
         <h4 class="text-dark">Password: testuser</h4>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button class="btn btn-outline-dark ml-2 btn-lg font-weight-bold" type="submit">Log In</button> 
-        </form>
-        <br>
-        <h2 class="text-dark font-weight-bold">You can create own account</h2>
+        </form><br><br>
+        <h3 class="text-dark font-weight-bold">You can create own account</h3>
         <p class="lead">
             <a class="btn btn-outline-dark btn-lg ml-2 font-weight-bold" href="{% url 'signup' %}" role="button">Sign Up</a>
         </p>

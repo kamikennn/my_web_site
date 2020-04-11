@@ -22,5 +22,8 @@ urlpatterns = [
     path('guests/',include('guests.urls')),
     path('guests/',include('django.contrib.auth.urls')),
     path('inquiries/', include('inquiries.urls')),
+    path('about_me/',include('aboutme.urls')),
+    path('strength/',include('strength.urls')),
+    path('portfolio/',include('portfolio.urls')),
     path('', TemplateView.as_view(template_name='home.html'),name='home'),
 ]

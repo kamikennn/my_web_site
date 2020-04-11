@@ -5,7 +5,8 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  <div class="inquirydetail">
+<br><br><br><br>
+  <div class="text-center">
     <div class="inquiry-entry">
       <h2>{{ object.title }}</h2>
       <p>by {{ object.author }} | {{ object.date }}</p>
@@ -22,5 +23,6 @@
     <p class="lead">
         <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
     </p>
+    </div>
 {% endif %}
 {% endblock content %}

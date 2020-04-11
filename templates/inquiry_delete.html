@@ -1,7 +1,8 @@
 {% extends 'inquirybase.html' %}
 
 {% block content %}
-<div class="inquirydelete">
+<br><br><br><br>
+<div class="text-center">
     <h1 class="font-weight-bold text-dark">DELETE</h1>
     <form action="" method="post">{% csrf_token %}
         <p>Are you sure you want to delete "{{ inquiry.title }}"?</p>

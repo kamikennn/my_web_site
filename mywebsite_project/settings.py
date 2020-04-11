@@ -36,6 +36,9 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'guests.apps.GuestsConfig',
     'inquiries.apps.InquiriesConfig',
+    'aboutme.apps.AboutmeConfig',
+    'strength.apps.StrengthConfig',
+    'portfolio.apps.PortfolioConfig',
     'crispy_forms',
     'bootstrap4',
     'django.contrib.admin',
@@ -113,9 +116,9 @@ else:
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '127.0.0.1',
             'PORT': '3306',
-            'NAME': 'mywebsite',
-            'USER': 'kentarokamiya',
-            'PASSWORD': 'Klx25osr',
+            'NAME': 'mywebsite',        #database name
+            'USER': 'kentarokamiya',    #instance user name, mysql user name
+            'PASSWORD': 'Klx25osr',     #instance user password
         }
     }
 # [END db_setup]
