@@ -3,15 +3,29 @@
 {% bootstrap_css %}
 
 {% block content %}
-<br><br>
-<div class="container-fluid container-extend">
-    <p class="display-4 font-weight-bold text-center"> About Me</p>
-</div>
-<br>
+<br><br><br><br>
 <div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <p class="text-center display-3 font-weight-bold">About Me</p>
+          <p class="h5">I'm Kentaro Kamiya and a master's student at Nagoya University in Aichi Japan.<br> Study computer science, mainly NLP and Deep Learning. <br>Develop web services using Django as a hobby.</p><br>
+          <a class="btn btn-outline-dark btn-lg font-weight-bold" href="https://drive.google.com/file/d/12raBHtWvTNUdYvI1kj7h23v-VK06FOmN/view?usp=sharing" role="button">See Resume</a>
+        </div>
+    </div>
+    <p class="display-4 text-center font-weight-bold">EDUCATION</p><br>
     <div class="row">
-        <div class="text1 col-lg-6 col-xs-12"><h1>hello world</h1><img src="/Users/Kamiken/Documents/django/mywebsite/image/IMG_0045.jpg" width=”250″ height=”166″></div>
-        <div class="text2 col-lg-6 col-xs-12"><h1>hello world</h1></div>
+        <div class="col-lg-4 col-xs-12">
+            <h1 class="text-center">Hand High Sch.<br><h5 class="text-right">2013-2016</h5></h1>
+            <h4>Started programming when <br>I was 18. At first, studied grammer of C-language and sorting algorithm.</h4><br>
+        </div>
+        <div class="col-lg-4 col-xs-12">
+            <h1 class="text-center">Nanzan Uni.<br><h5 class="text-right">2016-2020</h5></h1>
+            <h4>Studied Natural Language Processing(NLP) and Deep Learning. Developed query-focused products review summrization model with Deep Learning.</h4><br>
+        </div>
+        <div class="col-lg-4 col-xs-12">
+            <h1 class="text-center">Nagoya Uni.<br><h5 class="text-right">2020-2022(expected)</h5></h1>
+            <h4>Master's student of Informatics. Studying NLP, Discussion Mining, Speech Recognition with Deep Learning. </h4>
+        </div>
     </div>
 </div>
 {% endblock content %}
