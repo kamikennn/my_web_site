@@ -4,12 +4,12 @@ body {
 
 .backhomelogin {
   position: relative;
-  left: 480px;
+  left: 455px;
   bottom: 80px;
 }
 .logoutinquiry {
   position: relative;
-  left: 840px;
+  left: 460px;
   bottom: 80px;
 }
 .backtoinquirylist {
@@ -68,7 +68,7 @@ body {
 
 .inquiryloginform {
   position: relative;
-  top: 200px;
+  top: 150px;
   left: 370px;
 }
 

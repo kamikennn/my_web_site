@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('comment', models.CharField(max_length=140)),
-                ('article', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='inquiries.Inquiry')),
+                ('inpuiry', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='inquiries.Inquiry')),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
