@@ -5,29 +5,46 @@
 {% block content %}
 <br><br><br><br>
 <div class="container">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container-fluid text-center">
-          <p class="text-center display-3 font-weight-bold">About Me</p>
-          <p class="h5">I'm Kentaro Kamiya and a master's student at Nagoya University in Aichi Japan.<br> Study computer science, mainly NLP and Deep Learning. <br>Develop web services using Django as a hobby.</p><br>
-          <a class="btn btn-outline-dark btn-lg font-weight-bold" href="https://drive.google.com/file/d/12raBHtWvTNUdYvI1kj7h23v-VK06FOmN/view?usp=sharing" role="button">See Resume</a>
+    <div class="jumbotron jumbotron-fluid jumbotron-extend">
+        <div class="container-fluid text-center container-extend">
+          <p class="text-center display-3 font-weight-bold">EXPERIENCE</p>
         </div>
-    </div>
-    <p class="display-4 text-center font-weight-bold">EDUCATION</p><br>
-    <div class="row">
-        <div class="col-lg-4 col-xs-12">
-            <h1 class="text-center">Nagoya Uni.<br><h5 class="text-right">2020-2022(expected)</h5></h1>
-            <h4>Master's student of Informatics. Studying NLP, Discussion Mining, Speech Recognition with Deep Learning. </h4><br>
-        </div>
-        <div class="col-lg-4 col-xs-12">
-            <h1 class="text-center">Nanzan Uni.<br><h5 class="text-right">2016-2020</h5></h1>
-            <h4>Studied Natural Language Processing(NLP) and Deep Learning. Developed query-focused products review summrization model with Deep Learning.</h4><br>
-        </div>
-        <div class="col-lg-4 col-xs-12">
-            <h1 class="text-center">Hand High Sch.<br><h5 class="text-right">2013-2016</h5></h1>
-            <h4>Started programming when <br>I was 18. At first, studied grammer of C-language and sorting algorithm.</h4><br><br><br>
-        </div>
+    </div><br>
 
+    <div class="row justify-content-between">
+        <div class="col-lg-6 col-xs-12">
+            <h1 class="text-center font-weight-bold">The 82th National Convention of
+                IPSJ</h1><br>
+            <h3 class="font-weight-bold  text-center">Thesis Title</h3>
+            <h3 class="text-center font-italic">'An Abstractive Review Summarization Method Using Deep Learning with Focus on Key Words and its Evaluation'</h3><br>
+            <h3 class="font-weight-bold  text-center">Abstract</h3>
+            <h4 class="text-center">Proposed a method of extracting keywords by using TextRank into a set of review texts and generating summarization from the review texts by using query-focused summarization method with attentoin mechanism focusing on the extracted keywords.</h4><br>
+            <h3 class="text-center font-weight-bold">Won the Student Encouragement Award</h3><br>
+            <center><a class="btn btn-outline-dark btn-lg font-weight-bold" href="https://drive.google.com/file/d/1Pjbpf2iXUSuUQAinxZX5cghgLM45HZzZ/view?usp=sharing" role="button">See Thesis</a></center><br>
+        </div>
+        <div class="col-lg-6 col-xs-12">
+            <br><br>
+            <h1 class="text-center font-weight-bold">Portfolio Site</h1><br>
+            <h3 class="font-weight-bold  text-center">About</h3>
+            <h4 class="text-center">Created web site from scratch that you see now. Used Django Web Framework, and deployed the site to Google App Engine. It contains Inquiry Form, so everyone can post anything to me. The inquiry contents are stored in database so that  can see the contents eveytime. There is the Comment function so I can replay.</h4>
+            <h4></h4><br>
+            <h3 class="text-center font-weight-bold">Skills and Tools used</h3>
+            <table align="center">
+                <tr>
+                    <td><h4>Python</h4></td>
+                    <td><h4>Django</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>HTML/CSS&nbsp;&nbsp;&nbsp;&nbsp;</h4></td>
+                    <td><h4>GCP</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Javascript</h4></td>
+                    <td><h4>MySQL</h4></td>
+                </tr>
+            </table>
+        </div>
     </div>
-</div>
+</div><br>
 <center><a class="btn btn-outline-secondary btn-lg" href="{% url 'home' %}" role="button">BACK</a></center><br><br>
 {% endblock content %}
