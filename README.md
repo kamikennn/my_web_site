@@ -8,6 +8,6 @@ JavaScript
 Django  
 GCP  
 
-If you want to use this project ***as template***, you should implement following code.   
+If you want to use this project ***as template***, you should excute following code.   
 `$ pip install -r requirements.txt`  
 
