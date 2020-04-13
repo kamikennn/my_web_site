@@ -5,7 +5,7 @@
 {% block content %}
       {% if user.is_authenticated %}
         <br><br><br><br>
-        <h1 class="h1 font-whight-bold text-dark text-center">INQUIRIES</h1>
+        <h1 class="h1 font-whight-bold text-dark text-center">CONTACT</h1>
         <a class="btn btn-outline-dark btn-lg font-weight-bold" href="{% url 'inquiry_new' %}" role="button">+NEW</a>
         <br><br>
         {% for inquiry in object_list %}
